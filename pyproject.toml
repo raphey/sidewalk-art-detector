@@ -1,16 +1,19 @@
 [tool.poetry]
 name = "sidewalk-art-detector"
-version = "0.0.1"
+version = "0.0.2"
 description = "ML model for finding heartsprojectsf images"
 authors = []
 
 [tool.poetry.dependencies]
 python = "^3.8"
+matplotlib = "~3.2.2"
+numpy = "~1.19.5"
+tensorflow = "~2.6.0"
 
 [tool.poetry.dev-dependencies]
 black = "^21.7b0"
 isort = "^5.6.3"
-pylint = "^2.11.1"
+pylint = "^2.7.0"
 
 [tool.isort]
 ensure_newline_before_comments = true
