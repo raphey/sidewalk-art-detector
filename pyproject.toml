@@ -3,6 +3,9 @@ name = "sidewalk-art-detector"
 version = "0.0.2"
 description = "ML model for finding heartsprojectsf images"
 authors = []
+packages = [
+    {include = "src"}
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
