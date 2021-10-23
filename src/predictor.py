@@ -25,7 +25,7 @@ class Predictor(object):
 
     @classmethod
     def get_model(cls):
-        """Get the model object for this instance, loading it if it's not already loaded."""
+        """Load the model object if it's not already loaded."""
         if cls.model is None:
             cls.model = load_model('models/model')
         return cls.model
@@ -37,7 +37,6 @@ class Predictor(object):
 
     @classmethod
     def predict_from_image_path(cls, image_path):
-        """For the input, do the predictions and return them."""
         loaded_model = cls.get_model()
         loaded_image = load_image(image_path, image_size=IMG_SIZE, interpolation='bilinear', num_channels=3)
         loaded_image = np.expand_dims(loaded_image, axis=0)
@@ -50,7 +49,6 @@ class Predictor(object):
 
     @classmethod
     def predict_from_image_url(cls, image_url):
-        """For the input, do the predictions and return them."""
         loaded_model = cls.get_model()
         loaded_image = get_processed_image_from_url(image_url, image_size=IMG_SIZE, interpolation='bilinear', num_channels=3)
         loaded_image = np.expand_dims(loaded_image, axis=0)
